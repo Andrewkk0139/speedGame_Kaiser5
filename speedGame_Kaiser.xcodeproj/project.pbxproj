@@ -17,6 +17,10 @@
 		3B89B0322B20C6150000F939 /* speedGame_KaiserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89B0312B20C6150000F939 /* speedGame_KaiserTests.swift */; };
 		3B89B03C2B20C6150000F939 /* speedGame_KaiserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89B03B2B20C6150000F939 /* speedGame_KaiserUITests.swift */; };
 		3B89B03E2B20C6150000F939 /* speedGame_KaiserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89B03D2B20C6150000F939 /* speedGame_KaiserUITestsLaunchTests.swift */; };
+		3BF7FF812B221AFB00D79898 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7FF802B221AFB00D79898 /* GameViewController.swift */; };
+		3BF7FF832B221B2100D79898 /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7FF822B221B2100D79898 /* WinViewController.swift */; };
+		3BF7FF852B221B3800D79898 /* LossViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7FF842B221B3800D79898 /* LossViewController.swift */; };
+		3BF7FF872B221B4800D79898 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7FF862B221B4800D79898 /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		3B89B0372B20C6150000F939 /* speedGame_KaiserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = speedGame_KaiserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B89B03B2B20C6150000F939 /* speedGame_KaiserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speedGame_KaiserUITests.swift; sourceTree = "<group>"; };
 		3B89B03D2B20C6150000F939 /* speedGame_KaiserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speedGame_KaiserUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3BF7FF802B221AFB00D79898 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3BF7FF822B221B2100D79898 /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
+		3BF7FF842B221B3800D79898 /* LossViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossViewController.swift; sourceTree = "<group>"; };
+		3BF7FF862B221B4800D79898 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +111,12 @@
 			children = (
 				3B89B0172B20C6140000F939 /* AppDelegate.swift */,
 				3B89B0192B20C6140000F939 /* SceneDelegate.swift */,
-				3B89B01B2B20C6140000F939 /* ViewController.swift */,
 				3B89B01D2B20C6140000F939 /* Main.storyboard */,
+				3B89B01B2B20C6140000F939 /* ViewController.swift */,
+				3BF7FF862B221B4800D79898 /* StatsViewController.swift */,
+				3BF7FF842B221B3800D79898 /* LossViewController.swift */,
+				3BF7FF822B221B2100D79898 /* WinViewController.swift */,
+				3BF7FF802B221AFB00D79898 /* GameViewController.swift */,
 				3B89B0232B20C6150000F939 /* Assets.xcassets */,
 				3B89B0252B20C6150000F939 /* LaunchScreen.storyboard */,
 				3B89B0282B20C6150000F939 /* Info.plist */,
@@ -261,8 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BF7FF852B221B3800D79898 /* LossViewController.swift in Sources */,
+				3BF7FF812B221AFB00D79898 /* GameViewController.swift in Sources */,
+				3BF7FF872B221B4800D79898 /* StatsViewController.swift in Sources */,
 				3B89B01C2B20C6140000F939 /* ViewController.swift in Sources */,
 				3B89B0182B20C6140000F939 /* AppDelegate.swift in Sources */,
+				3BF7FF832B221B2100D79898 /* WinViewController.swift in Sources */,
 				3B89B0222B20C6140000F939 /* speedGame_Kaiser.xcdatamodeld in Sources */,
 				3B89B01A2B20C6140000F939 /* SceneDelegate.swift in Sources */,
 			);
