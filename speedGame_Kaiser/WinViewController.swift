@@ -8,11 +8,15 @@
 import UIKit
 
 class WinViewController: UIViewController {
-
+    
+    @IBOutlet weak var winImageOutlet: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        winImageOutlet.image = UIImage(named: "trophy")
+        
     }
     
     @IBAction func winToStatsAction(_ sender: Any) {

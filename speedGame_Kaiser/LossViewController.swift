@@ -9,10 +9,12 @@ import UIKit
 
 class LossViewController: UIViewController {
 
+    @IBOutlet weak var lossImageOutlet: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        lossImageOutlet.image = UIImage(named: "sadFace")
     }
     
     @IBAction func lossToStatsAction(_ sender: Any) {

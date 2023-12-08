@@ -117,6 +117,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qzG-nw-y0P">
                                 <rect key="frame" x="-13" y="465" width="423" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKv-tM-9cQ">
                                 <rect key="frame" x="49" y="44" width="299" height="168"/>
@@ -125,6 +127,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CVJ-Ur-pHI">
                                 <rect key="frame" x="0.0" y="220" width="423" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7m-M9-akG">
                                 <rect key="frame" x="57" y="323" width="54" height="35"/>
@@ -141,6 +145,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="B2x-HP-ySM"/>
                     <connections>
+                        <outlet property="line1Outlet" destination="CVJ-Ur-pHI" id="aaf-Un-kOd"/>
+                        <outlet property="line2Outlet" destination="qzG-nw-y0P" id="jfJ-pD-bb0"/>
                         <segue destination="auW-lj-pf3" kind="show" identifier="toWin" id="GGC-nV-8wu"/>
                         <segue destination="Ioz-3G-M2g" kind="show" identifier="toLoss" id="alZ-82-byy"/>
                     </connections>
@@ -187,6 +193,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="z0q-0J-vRe"/>
                     <connections>
+                        <outlet property="lossImageOutlet" destination="P9T-JN-0no" id="BuY-GO-8Ef"/>
                         <segue destination="54c-Lw-gPe" kind="show" identifier="lossToStats" id="ZRl-G2-0rt"/>
                     </connections>
                 </viewController>
@@ -287,6 +294,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gzj-x9-WQI"/>
                     <connections>
+                        <outlet property="winImageOutlet" destination="pdQ-VY-uxI" id="89t-dt-At5"/>
                         <segue destination="54c-Lw-gPe" kind="show" identifier="winToStats" id="gxZ-Wo-DM4"/>
                     </connections>
                 </viewController>
