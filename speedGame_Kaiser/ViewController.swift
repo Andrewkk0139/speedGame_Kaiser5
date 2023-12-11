@@ -9,6 +9,9 @@ import UIKit
 
 public class AppData {
     static var masterDeck: [String:String] = [:]
+    static var userDeck: [String:String] = [:]
+    static var aiDeck: [String:String] = [:]
+
 }
 
 class ViewController: UIViewController {
@@ -40,7 +43,21 @@ class ViewController: UIViewController {
         AppData.masterDeck["aceD"] =  "ace_of_diamonds"
         AppData.masterDeck["aceH"] =  "ace_of_hearts"
         AppData.masterDeck["aceS"] =  "ace_of_spades"
-        print(AppData.masterDeck)
+        print("THIS IS THE MASTER DECK: \(AppData.masterDeck)")
+        let aiRange = 0...19
+        for i in aiRange{
+            let key = Array(AppData.masterDeck.keys)[i]
+            let value = Array(AppData.masterDeck.values)[i]
+            AppData.aiDeck[key] = value
+        }
+        let playerRange = 20...39
+        for i in playerRange{
+            let key = Array(AppData.masterDeck.keys)[i]
+            let value = Array(AppData.masterDeck.values)[i]
+            AppData.userDeck[key] = value
+        }
+        print("THIS IS THE AI DECK: \(AppData.aiDeck)")
+        print("THIS IS THE USER DECK: \(AppData.userDeck)")
     }
     
 

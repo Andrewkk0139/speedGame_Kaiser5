@@ -106,10 +106,6 @@
                                 <rect key="frame" x="164" y="279" width="95" height="161"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgX-9d-T4f">
-                                <rect key="frame" x="283" y="279" width="95" height="161"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ohi-Sz-ACf">
                                 <rect key="frame" x="221" y="512" width="95" height="161"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -139,14 +135,26 @@
                                     <action selector="devButtonAction:" destination="qln-8Z-0OC" eventType="touchUpInside" id="X2T-ug-Cuk"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgX-9d-T4f">
+                                <rect key="frame" x="247" y="234" width="176" height="247"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5k6-iI-Bof"/>
                         <color key="backgroundColor" red="0.6549019814" green="0.78431367870000002" blue="0.85882353779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="B2x-HP-ySM"/>
                     <connections>
+                        <outlet property="compImageOutlet" destination="AKv-tM-9cQ" id="I9p-Rh-2eU"/>
+                        <outlet property="currentPileImageOutlet" destination="BYE-bQ-9oe" id="JtK-jH-CxW"/>
+                        <outlet property="deckImageOutlet" destination="jgX-9d-T4f" id="Afp-f1-beY"/>
+                        <outlet property="fifthUserImageOutlet" destination="LtT-kM-1Rv" id="lvW-Ss-M3p"/>
+                        <outlet property="forthUserImageOutlet" destination="3W8-Wh-lcR" id="gyA-J0-ucS"/>
                         <outlet property="line1Outlet" destination="CVJ-Ur-pHI" id="aaf-Un-kOd"/>
                         <outlet property="line2Outlet" destination="qzG-nw-y0P" id="jfJ-pD-bb0"/>
+                        <outlet property="oneUserImageOutlet" destination="KSN-Dj-II1" id="aVS-fK-6Te"/>
+                        <outlet property="thirdUserImageOutlet" destination="qsl-DY-5el" id="C1K-Je-SCR"/>
+                        <outlet property="twoUserImageOutlet" destination="ohi-Sz-ACf" id="vys-tl-owD"/>
                         <segue destination="auW-lj-pf3" kind="show" identifier="toWin" id="GGC-nV-8wu"/>
                         <segue destination="Ioz-3G-M2g" kind="show" identifier="toLoss" id="alZ-82-byy"/>
                     </connections>
@@ -322,7 +330,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="D6K-C2-POx"/>
+        <segue reference="alZ-82-byy"/>
         <segue reference="ZRl-G2-0rt"/>
         <segue reference="eCJ-Ns-fEB"/>
     </inferredMetricsTieBreakers>
