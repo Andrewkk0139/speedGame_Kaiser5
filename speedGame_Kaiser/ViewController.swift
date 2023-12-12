@@ -11,6 +11,8 @@ public class AppData {
     static var masterDeck: [String:String] = [:]
     static var userDeck: [String:String] = [:]
     static var aiDeck: [String:String] = [:]
+    static var leftoverDeck: [String:String] = [:]
+    static var playingPile: [String:String] = [:]
 
 }
 
@@ -27,22 +29,22 @@ class ViewController: UIViewController {
             AppData.masterDeck["\(i)h"] =  "\(i)_of_hearts"
             AppData.masterDeck["\(i)s"] =  "\(i)_of_spades"
         }
-        AppData.masterDeck["jackC"] =  "jack_of_clubs2"
-        AppData.masterDeck["jackD"] =  "jack_of_diamonds2"
-        AppData.masterDeck["jackH"] =  "jack_of_hearts2"
-        AppData.masterDeck["jackS"] =  "jack_of_spades2"
-        AppData.masterDeck["queenC"] =  "queen_of_clubs2"
-        AppData.masterDeck["queenD"] =  "queen_of_diamonds2"
-        AppData.masterDeck["queenH"] =  "queen_of_hearts2"
-        AppData.masterDeck["queenS"] =  "queen_of_spades2"
-        AppData.masterDeck["kingC"] =  "king_of_clubs2"
-        AppData.masterDeck["kingD"] =  "king_of_diamonds2"
-        AppData.masterDeck["kingH"] =  "king_of_hearts2"
-        AppData.masterDeck["kingS"] =  "king_of_spades2"
-        AppData.masterDeck["aceC"] =  "ace_of_clubs"
-        AppData.masterDeck["aceD"] =  "ace_of_diamonds"
-        AppData.masterDeck["aceH"] =  "ace_of_hearts"
-        AppData.masterDeck["aceS"] =  "ace_of_spades"
+        AppData.masterDeck["11c"] =  "jack_of_clubs2"
+        AppData.masterDeck["11d"] =  "jack_of_diamonds2"
+        AppData.masterDeck["11h"] =  "jack_of_hearts2"
+        AppData.masterDeck["11s"] =  "jack_of_spades2"
+        AppData.masterDeck["12c"] =  "queen_of_clubs2"
+        AppData.masterDeck["12d"] =  "queen_of_diamonds2"
+        AppData.masterDeck["12h"] =  "queen_of_hearts2"
+        AppData.masterDeck["12s"] =  "queen_of_spades2"
+        AppData.masterDeck["13c"] =  "king_of_clubs2"
+        AppData.masterDeck["13d"] =  "king_of_diamonds2"
+        AppData.masterDeck["13h"] =  "king_of_hearts2"
+        AppData.masterDeck["13s"] =  "king_of_spades2"
+        AppData.masterDeck["1c"] =  "ace_of_clubs"
+        AppData.masterDeck["1d"] =  "ace_of_diamonds"
+        AppData.masterDeck["1h"] =  "ace_of_hearts"
+        AppData.masterDeck["1s"] =  "ace_of_spades"
         print("THIS IS THE MASTER DECK: \(AppData.masterDeck)")
         let aiRange = 0...19
         for i in aiRange{
@@ -56,8 +58,18 @@ class ViewController: UIViewController {
             let value = Array(AppData.masterDeck.values)[i]
             AppData.userDeck[key] = value
         }
+        let deckRange = 40...50
+        for i in deckRange {
+            let key = Array(AppData.masterDeck.keys)[i]
+            let value = Array(AppData.masterDeck.values)[i]
+            AppData.leftoverDeck[key] = value
+        }
+        let key = Array(AppData.masterDeck.keys)[51]
+        let value = Array(AppData.masterDeck.values)[51]
+        AppData.playingPile[key] = value
         print("THIS IS THE AI DECK: \(AppData.aiDeck)")
         print("THIS IS THE USER DECK: \(AppData.userDeck)")
+        
     }
     
 

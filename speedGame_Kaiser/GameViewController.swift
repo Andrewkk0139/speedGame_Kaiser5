@@ -32,7 +32,8 @@ class GameViewController: UIViewController {
             line2Outlet.image = UIImage(named: "line")
             compImageOutlet.image = UIImage(named: "evilComp")
             deckImageOutlet.image = UIImage(named: "backOfCard")
-        
+            let value = Array(AppData.playingPile.values)[0]
+            currentPileImageOutlet.image = UIImage(named: value)
         //setting up user card images
         let loadFirstFiveUserRange = 0...4
         for i in loadFirstFiveUserRange{
@@ -61,5 +62,39 @@ class GameViewController: UIViewController {
         performSegue(withIdentifier: "toWin", sender: self)
     }
     
+    func checkPlay(_ playingCardName: String,_ currentPlacedCardNum: Int,_ selectedImageNum: Int) {
+        let playingCardNum = playingCardName.first!
+        if ((playingCardNum > currentPlacedCardNum && playingCardNum < currentPlacedCardNum + 2) || (playingCardNum < currentPlacedCardNum && playingCardNum > currentPlacedCardNum - 2)) {
+            // play is valid
+            if AppData.userDeck.count > 5 {
+//                 user had more than 5 cards, load next card
+                switch selectedImageNum {
+                case 1:
+                    let values = Array(AppData.userDeck.values)[5]
+                    oneUserImageOutlet.image = UIImage(named: values)
+                case 2:
+                    let values = Array(AppData.userDeck.values)[5]
+                    twoUserImageOutlet.image = UIImage(named: values)
+                case 3:
+                    let values = Array(AppData.userDeck.values)[5]
+                    thirdUserImageOutlet.image = UIImage(named: values)
+                case 4:
+                    let values = Array(AppData.userDeck.values)[5]
+                    forthUserImageOutlet.image = UIImage(named: values)
+                case 5:
+                    let values = Array(AppData.userDeck.values)[5]
+                    fifthUserImageOutlet.image = UIImage(named: values)
+                default:
+                    print("if i see this im scared")
+                }
+                
+            } else {
+                
+            }
+        } else {
+            // action is invalid
+            
+        }
+    }
 
 }
