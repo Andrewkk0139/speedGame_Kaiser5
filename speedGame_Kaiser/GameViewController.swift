@@ -62,10 +62,20 @@ class GameViewController: UIViewController {
         performSegue(withIdentifier: "toWin", sender: self)
     }
     
-    func checkPlay(_ playingCardName: String,_ currentPlacedCardNum: Int,_ selectedImageNum: Int) {
-        let playingCardNum = playingCardName.first!
+    @IBAction func cardImageOneAction(_ sender: Any) {
+        checkPlay(Array(AppData.userDeck.keys)[0], Array(AppData.userDeck.values)[0], 1)
+    }
+    
+    func checkPlay(_ playingCardName: String,_ currentPlacedCard: String,_ selectedImageNum: Int) {
+        let playingCardNum = Int("\(playingCardName.first!)")!
+        let currentPlacedCardNum = Int("\(currentPlacedCard.first!)")!
+        
         if ((playingCardNum > currentPlacedCardNum && playingCardNum < currentPlacedCardNum + 2) || (playingCardNum < currentPlacedCardNum && playingCardNum > currentPlacedCardNum - 2)) {
             // play is valid
+            if var getValue = AppData.userDeck[playingCardName]{
+                print(getValue)
+            }
+           
             if AppData.userDeck.count > 5 {
 //                 user had more than 5 cards, load next card
                 switch selectedImageNum {
@@ -93,7 +103,7 @@ class GameViewController: UIViewController {
             }
         } else {
             // action is invalid
-            
+            print("cant do that")
         }
     }
 
