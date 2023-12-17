@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rJf-7F-Zu9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rJf-7F-Zu9">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -71,6 +72,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6gm-nd-Yzf"/>
                     <connections>
+                        <outlet property="userNameFieldOutlt" destination="iuH-Og-kpd" id="RQu-pb-Dco"/>
                         <segue destination="qln-8Z-0OC" kind="show" identifier="toGame" id="D6K-C2-POx"/>
                     </connections>
                 </viewController>
@@ -126,15 +128,6 @@
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7m-M9-akG">
-                                <rect key="frame" x="57" y="323" width="54" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="dev"/>
-                                <connections>
-                                    <action selector="devButtonAction:" destination="qln-8Z-0OC" eventType="touchUpInside" id="X2T-ug-Cuk"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgX-9d-T4f">
                                 <rect key="frame" x="247" y="234" width="176" height="247"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -185,7 +178,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="np5-8g-F4l">
-                                <rect key="frame" x="13" y="388" width="143" height="35"/>
+                                <rect key="frame" x="13" y="388" width="143" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <state key="normal" title="Button"/>
@@ -203,6 +196,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZi-Sg-IdF">
+                                <rect key="frame" x="16" y="319" width="112" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="dev-loss"/>
+                                <connections>
+                                    <action selector="devLoss:" destination="qln-8Z-0OC" eventType="touchUpInside" id="Jvm-th-0Zz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7m-M9-akG">
+                                <rect key="frame" x="16" y="276" width="112" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="dev-win"/>
+                                <connections>
+                                    <action selector="devButtonAction:" destination="qln-8Z-0OC" eventType="touchUpInside" id="X2T-ug-Cuk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5k6-iI-Bof"/>
                         <color key="backgroundColor" red="0.6549019814" green="0.78431367870000002" blue="0.85882353779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -216,6 +227,7 @@
                         <outlet property="forthUserImageOutlet" destination="3W8-Wh-lcR" id="gyA-J0-ucS"/>
                         <outlet property="line1Outlet" destination="CVJ-Ur-pHI" id="aaf-Un-kOd"/>
                         <outlet property="line2Outlet" destination="qzG-nw-y0P" id="jfJ-pD-bb0"/>
+                        <outlet property="noActionOutlet" destination="np5-8g-F4l" id="oSI-LZ-YAq"/>
                         <outlet property="oneUserImageOutlet" destination="KSN-Dj-II1" id="aVS-fK-6Te"/>
                         <outlet property="riotLableOutlet" destination="QtY-FV-2t9" id="Gu6-YP-OXM"/>
                         <outlet property="thirdUserImageOutlet" destination="qsl-DY-5el" id="C1K-Je-SCR"/>
@@ -335,6 +347,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="uXG-p8-dKG"/>
                     <connections>
+                        <outlet property="lossOutlet" destination="71W-aN-ysI" id="gjD-dj-QrV"/>
+                        <outlet property="userNameOutlet" destination="ykE-Do-xqY" id="o0G-dj-Onu"/>
+                        <outlet property="winOutlet" destination="7am-NR-nr3" id="Q3U-Xk-NF5"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toHome" id="eCJ-Ns-fEB"/>
                     </connections>
                 </viewController>
@@ -408,22 +423,21 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="alZ-82-byy"/>
-        <segue reference="ZRl-G2-0rt"/>
+        <segue reference="gxZ-Wo-DM4"/>
         <segue reference="eCJ-Ns-fEB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -15,6 +15,7 @@ class LossViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         lossImageOutlet.image = UIImage(named: "sadFace")
+        AppData.loss+=1
     }
     
     @IBAction func lossToStatsAction(_ sender: Any) {

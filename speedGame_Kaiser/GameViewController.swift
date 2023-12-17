@@ -8,6 +8,7 @@
 import UIKit
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var noActionOutlet: UIButton!
     @IBOutlet weak var riotLableOutlet: UILabel!
     var currentUser5: [String:String] = [:]
     var currrent: [String:String] = [:]
@@ -111,31 +112,58 @@ class GameViewController: UIViewController {
             print("YES!!! you can do that")
             // add it to the playing pile
             if let getValue = AppData.userDeck[playingCardName]{
-                print(getValue)
-                currrent[playingCardName] = "\(getValue)"
+                let key = Array(AppData.playingPile.keys)[0]
+                AppData.playingPile[key] = nil
+                AppData.playingPile[playingCardName] = getValue
                 currentPileImageOutlet.image = UIImage(named: "\(getValue)")
             }
            //Loading new card image
            // if AppData.userDeck.count > 5 {
 //                 user had more than 5 cards, load next card
             AppData.userDeck[playingCardName] = nil
-            for pls in 0...5 {
+            for pls in 1...5 {
                 switch pls {
                 case 1:
-                    let values = Array(AppData.userDeck.values)[0]
-                    oneUserImageOutlet.image = UIImage(named: values)
+                    if AppData.userDeck.count >= 1 {
+                        let values = Array(AppData.userDeck.values)[0]
+                        oneUserImageOutlet.image = UIImage(named: values)
+                    } else {
+                        oneUserImageOutlet.isHidden = true
+                        performSegue(withIdentifier: "toWin", sender: self)
+                    }
+                    
                 case 2:
-                    let values = Array(AppData.userDeck.values)[1]
-                    twoUserImageOutlet.image = UIImage(named: values)
+                    if AppData.userDeck.count >= 2 {
+                        let values = Array(AppData.userDeck.values)[1]
+                        twoUserImageOutlet.image = UIImage(named: values)
+                    } else {
+                        twoUserImageOutlet.isHidden = true
+                    }
+                    
                 case 3:
-                    let values = Array(AppData.userDeck.values)[2]
-                    thirdUserImageOutlet.image = UIImage(named: values)
+                    if AppData.userDeck.count >= 3 {
+                        let values = Array(AppData.userDeck.values)[2]
+                        thirdUserImageOutlet.image = UIImage(named: values)
+                    } else {
+                        thirdUserImageOutlet.isHidden = true
+
+                    }
+                   
                 case 4:
-                    let values = Array(AppData.userDeck.values)[3]
-                    forthUserImageOutlet.image = UIImage(named: values)
+                    if AppData.userDeck.count >= 4 {
+                        let values = Array(AppData.userDeck.values)[3]
+                        forthUserImageOutlet.image = UIImage(named: values)
+                    } else {
+                        forthUserImageOutlet.isHidden = true
+                    }
+                   
                 case 5:
-                    let values = Array(AppData.userDeck.values)[4]
-                    fifthUserImageOutlet.image = UIImage(named: values)
+                    if AppData.userDeck.count >= 5 {
+                        let values = Array(AppData.userDeck.values)[4]
+                        fifthUserImageOutlet.image = UIImage(named: values)
+                    } else {
+                        fifthUserImageOutlet.isHidden = true
+                    }
                 default:
                     print("if i see this im scared")
                 }
@@ -150,13 +178,19 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func noActionAction(_ sender: Any) {
-        let key = Array(AppData.leftoverDeck.keys)[0]
-        let value = Array(AppData.leftoverDeck.values)[0]
-        AppData.playingPile[key] = value
-        currentPileImageOutlet.image = UIImage(named: value)
-        AppData.leftoverDeck[key] = nil
-        print("currentPlaying, pile: \(AppData.playingPile)")
-
+        if AppData.leftoverDeck.count > 1 {
+            var key = Array(AppData.playingPile.keys)[0]
+            AppData.playingPile[key] = nil
+            key = Array(AppData.leftoverDeck.keys)[0]
+            var value = Array(AppData.leftoverDeck.values)[0]
+            AppData.playingPile[key] = value
+            currentPileImageOutlet.image = UIImage(named: value)
+            AppData.leftoverDeck[key] = nil
+            print("currentPlaying, pile: \(AppData.playingPile)")
+        } else {
+            noActionOutlet.isHidden = true
+            performSegue(withIdentifier: "toLoss", sender: self)
+        }
     }
     
     func getCardNums(_ s1: String) -> String{
@@ -164,6 +198,8 @@ class GameViewController: UIViewController {
       let start = s1.index(s1.startIndex, offsetBy: 0)
       return (String(s1[start...num]))
     }
+    
+    @IBAction func devLoss(_ sender: Any) {performSegue(withIdentifier: "toLoss", sender: self)}
 }
 
 

@@ -16,6 +16,7 @@ class WinViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         winImageOutlet.image = UIImage(named: "trophy")
+        AppData.win+=1
         
     }
     
